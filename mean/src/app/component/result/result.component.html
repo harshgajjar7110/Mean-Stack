@@ -1,0 +1,57 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Title</th>
+      <th>
+        Action
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of book">
+      <td scope="row"> {{item.name}}</td>
+      <td> {{item.author}}</td>
+      <td> {{item.title}}</td>
+      <td><button (click)="deleteBook(item._id)" class="btn btn-danger">Delete</button>
+        <button data-toggle="modal" (click)="edit(item)" data-target="#exampleModal"
+          class="ml-1 btn btn-dark">Edit</button></td>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Author</label>
+                  <input type="text" class="form-control" name="author" [(ngModel)]="author" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName">Name</label>
+                  <input type="text" class="form-control" [(ngModel)]="name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputTitle">Title</label>
+                  <input type="text" class="form-control" [(ngModel)]="title" name="title">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" data-dismiss="modal" (click)="updateBook(item._id)" class="btn btn-primary">Save
+                changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </tr>
+  </tbody>
+</table>
