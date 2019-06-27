@@ -1,5 +1,5 @@
 # MongoDb Express Angular Node
-1. Clone This Repo git clone https://github.com/harshgajjar7110/Mean-Stack.git -automatic
+1. Clone This Repo <addr>git clone https://github.com/harshgajjar7110/Mean-Stack.git <addr>
 2. Goto Mean Folder For FrontEnd 
 3. Hit npm i
 4. Goto Server Folder in Parent Directory
